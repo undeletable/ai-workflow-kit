@@ -8,7 +8,8 @@ Implement the requested change end-to-end and include browser verification.
 Requirements:
 - Make the code changes needed for the user request.
 - Run relevant checks/tests when available.
-- Start the app if needed and verify behavior in the browser.
+- If the VS Code Live Server extension is installed in the current VS Code instance, use it for the local web server when compatible with the project.
+- Start the app/server as needed and verify behavior in the browser.
 - Validate the specific user flow affected by the change.
 - Report:
   - What was changed.
