@@ -3,14 +3,5 @@
 # Each platform checks out with native line endings (LF on Linux, CRLF on Windows)
 * text=auto
 
-# Explicitly mark binary files to prevent line ending conversion
-*.png binary
-*.jpg binary
-*.jpeg binary
-*.gif binary
-*.zip binary
-*.tar binary
-*.gz binary
-
 # Shell scripts should always have LF
 *.sh text eol=lf
