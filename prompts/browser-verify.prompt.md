@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: agent
 description: "Implement task and verify in browser. Use when user wants UI/browser/visual/click-flow/e2e validation."
 ---
 

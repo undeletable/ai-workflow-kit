@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: agent
 description: "Short command for browser mode. Use when UI/browser verification is required."
 ---
 
