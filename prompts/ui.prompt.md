@@ -1,6 +1,6 @@
 ---
 agent: agent
-description: "Short command for browser mode. Use when UI/browser verification is required."
+description: "Short command for browser mode. Use when UI/ browser verification is required."
 ---
 
 Run browser mode for this request:
