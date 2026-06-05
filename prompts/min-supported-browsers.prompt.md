@@ -7,10 +7,12 @@ Identify and output the minimum supported browser versions for the current works
 
 Execution policy:
 - Determine targets from project configuration in this order:
-  1. Explicit Browserslist config (`.browserslistrc`, `browserslist` in `package.json`, or `browserslist` config files).
+  1. Explicit project browser-target config.
   2. Tool-specific browser target config (Babel, PostCSS/Autoprefixer, framework config).
-  3. Framework defaults only if no explicit project config exists.
-- Prefer resolving with CLI output when available (`npx --yes browserslist`).
+- If no browser-target config exists, inspect the codebase for browser-dependent features and infer the minimum browser versions required.
+- Validate inferred support against compatibility sources such as MDN, Can I Use, and official platform documentation.
+- Framework defaults only if no explicit project config exists and no code-feature-based inference is possible.
+- Prefer resolving with CLI output when available.
 - If CLI is unavailable, derive targets directly from config files.
 - Normalize the resolved targets into one minimum version per browser family.
 
