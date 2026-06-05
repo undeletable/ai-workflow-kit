@@ -8,7 +8,8 @@ Implement the requested change end-to-end and include browser verification.
 Requirements:
 - Make the code changes needed for the user request.
 - Run relevant checks/tests when available.
-- If the VS Code Live Server extension is installed in the current VS Code instance, use it for the local web server when compatible with the project.
+- If the VS Code Live Server extension is installed in the current VS Code instance and is compatible with the project, launch it explicitly via VS Code command (prefer command ID `extension.liveServer.goOnline`; fallback: `liveServer.goOnline` or `Live Server: Open with Live Server`) and use it as the local web server.
+- After browser verification, if Live Server was used, stop it via VS Code command (prefer command ID `extension.liveServer.goOffline`; fallback: `liveServer.goOffline` or `Live Server: Stop Live Server`).
 - Start the app/server as needed and verify behavior in the browser.
 - Validate the specific user flow affected by the change.
 - Report:
