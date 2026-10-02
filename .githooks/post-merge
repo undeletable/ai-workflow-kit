@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-"$(dirname "$0")/sync-vscode-user-ai-config.sh"
+"$(dirname "$0")/sync-copilot-user-ai-config.sh"

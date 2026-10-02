@@ -1,6 +1,6 @@
 ---
 applyTo: "**/*.{ts,tsx}"
-description: "TypeScript code generation defaults and best practices"
+description: "User-level TypeScript code generation defaults and best practices"
 ---
 
 TypeScript code generation defaults:

@@ -7,42 +7,23 @@ if [ "$branch_name" != "main" ]; then
 fi
 
 repo_root=$(git rev-parse --show-toplevel)
+copilot_user_root="${COPILOT_USER_ROOT:-$HOME/.copilot}"
 
-if [ -n "${APPDATA:-}" ]; then
-  vscode_user_root="$APPDATA/Code/User"
-else
-  vscode_user_root="$HOME/.config/Code/User"
-fi
-
-# Sync any known AI customization directories that exist in this repository.
-for dir_name in prompts instructions chatmodes agents skills; do
+# Sync user-level instructions and skills for Copilot Agent Host.
+for dir_name in instructions skills; do
   source_dir="$repo_root/$dir_name"
   if [ ! -d "$source_dir" ]; then
     continue
   fi
 
-  target_dir=""
   case "$dir_name" in
-    prompts)
-      target_dir="${VSCODE_USER_PROMPTS_DIR:-}"
-      ;;
     instructions)
-      target_dir="${VSCODE_USER_INSTRUCTIONS_DIR:-}"
-      ;;
-    chatmodes)
-      target_dir="${VSCODE_USER_CHATMODES_DIR:-}"
-      ;;
-    agents)
-      target_dir="${VSCODE_USER_AGENTS_DIR:-}"
+      target_dir="${COPILOT_USER_INSTRUCTIONS_DIR:-$copilot_user_root/instructions}"
       ;;
     skills)
-      target_dir="${VSCODE_USER_SKILLS_DIR:-}"
+      target_dir="${COPILOT_USER_SKILLS_DIR:-$copilot_user_root/skills}"
       ;;
   esac
-
-  if [ -z "$target_dir" ]; then
-    target_dir="$vscode_user_root/$dir_name"
-  fi
 
   mkdir -p "$target_dir"
 
