@@ -1,8 +1,8 @@
 ---
-agent: agent
-description: "Identify and output minimum supported browser versions for the current project."
+name: min-supported-browsers
+description: Identify and output minimum supported browser versions for the current project.
+disable-model-invocation: true
 ---
-
 Identify and output the minimum supported browser versions for the current workspace.
 
 Execution policy:

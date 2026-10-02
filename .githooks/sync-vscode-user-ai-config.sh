@@ -46,11 +46,15 @@ for dir_name in prompts instructions chatmodes agents skills; do
 
   mkdir -p "$target_dir"
 
-  for source_file in "$source_dir"/*; do
-    [ -f "$source_file" ] || continue
-    file_name=$(basename "$source_file")
-    cp -f "$source_file" "$target_dir/$file_name"
-  done
+  if [ "$dir_name" = skills ]; then
+    cp -R "$source_dir"/. "$target_dir"/
+  else
+    for source_file in "$source_dir"/*; do
+      [ -f "$source_file" ] || continue
+      file_name=$(basename "$source_file")
+      cp -f "$source_file" "$target_dir/$file_name"
+    done
+  fi
 
   echo "Synced $dir_name to: $target_dir"
 done
